@@ -1,7 +1,6 @@
 package com.mariana.aulas.service;
 
 import java.util.List;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,19 +24,19 @@ public class AulaService {
 		return repository.findAll();
 	}
 	//metodo para buscar por id
-	public AulaModel getAulaById(UUID id) {
+	public AulaModel getAulaById(int id) {
 		return repository.findById(id).get();
 	}
 	//método para atualizar por id
-	public AulaModel updateAula(UUID id, AulaModel aula) {
+	public AulaModel updateAula(int id, AulaModel aula) {
 		AulaModel aulaAtualizada =  repository.findById(id).get();;
-		aulaAtualizada.setMaterial(aula.getMaterial());
+		aulaAtualizada.setMateria(aula.getMateria());
 		aulaAtualizada.setConteudo(aula.getConteudo());
 		aulaAtualizada.setTipo_aula(aula.getTipo_aula());;
 		return repository.save(aula);
 	}
 	
-	public void deleteAula(UUID id) {
+	public void deleteAula(int id) {
 		repository.deleteById(id);
 	}
 	   

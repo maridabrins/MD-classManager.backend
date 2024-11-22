@@ -1,7 +1,7 @@
 package com.mariana.aulas.controller;
 
 import java.util.List;
-import java.util.UUID;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,7 +29,7 @@ public class AulaController {
 	}
 	
 	@GetMapping("/aulas/{id}")
-	public AulaModel getAula(@PathVariable UUID id) {
+	public AulaModel getAula(@PathVariable int id) {
 		return service.getAulaById(id);
 	}
 	  
@@ -39,12 +39,12 @@ public class AulaController {
     }
     
    @PutMapping("/aulas/editar/{id}")
-   public AulaModel updateAula(@PathVariable UUID id, @RequestBody AulaModel aula) {
+   public AulaModel updateAula(@PathVariable int id, @RequestBody AulaModel aula) {
 	   return service.updateAula(id, aula);
    }
 	
    @DeleteMapping("/aulas/deletar/{id}")
-   public void deleteAula(@PathVariable UUID id) {
+   public void deleteAula(@PathVariable int id) {
 	 service.deleteAula(id);
    }
 	
