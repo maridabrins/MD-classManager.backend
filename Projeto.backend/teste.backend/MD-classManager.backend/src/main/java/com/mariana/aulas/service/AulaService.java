@@ -37,10 +37,10 @@ public class AulaService {
   //método para atualizar por id
   	public AulaModel updateAula(Integer id, AulaModel aula) {
   		AulaModel aulaAtualizada =  repository.findById(id).get();;
-  		aulaAtualizada.setMateriaURL(aula.getMateriaURL());
-  		aulaAtualizada.setConteudo(aula.getConteudo());
-  		aulaAtualizada.setTipoAula(aula.getTipoAula());;
-  		return repository.save(aula);
+  		aulaAtualizada.setMateriaURL(aulaAtualizada.getMateriaURL());
+  		aulaAtualizada.setConteudo(aulaAtualizada.getConteudo());
+  		aulaAtualizada.setTipoAula(aulaAtualizada.getTipoAula());;
+  		return repository.save(aulaAtualizada);
   	}
   	
     
